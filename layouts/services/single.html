@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="py-24 bg-gradient-to-r from-primary to-accent text-white text-center">
+  <div class="container mx-auto">
+    <h1 class="text-4xl font-bold leading-tight">{{ .Title }}</h1>
+    <p class="mt-4 text-lg">{{ .Params.description }}</p>
+  </div>
+</section>
+
+<!-- Service Details -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Détails du service</h2>
+        {{ range .Params.sections }}
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-primary">{{ .title }}</h3>
+            <p class="text-gray-700">{{ .content }}</p>
+          </div>
+        {{ end }}
+      </div>
+      <div>
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="rounded-lg shadow-md">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-16 bg-light text-center">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold">Besoin de plus d'informations ?</h2>
+    <p class="mt-4 text-lg text-text-light">Contactez-nous pour en savoir plus sur nos offres de services.</p>
+    <a href="/contact" class="mt-6 inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-accent transition">
+      Contactez-nous
+    </a>
+  </div>
+</section>
+
+{{ end }}

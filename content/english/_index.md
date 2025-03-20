@@ -22,12 +22,12 @@ services:
     - title: "Mise à disposition de ressources"
       description: "Consultants fonctionnels/techniques, intérim exécutif, opérateurs ponctuels et saisonniers."
       icon: "fa-users"
-      link: "/services/resource-management"
+      link: "/services/resources"
 
     - title: "Formation"
       description: "Évaluations des compétences, conception de programmes de formation sur-mesure, formateurs certifiés."
       icon: "fa-graduation-cap"
-      link: "/services/training"
+      link: "/services/formation"
 
 # About Section
 about:

@@ -1,0 +1,99 @@
+
+{{ define "main" }}
+
+<!-- Hero Section -->
+{{ with .Params.about_section }}
+<section class="py-24 bg-gradient-to-r from-primary to-accent text-white text-center">
+  <div class="container mx-auto">
+    <h1 class="text-4xl font-bold leading-tight">{{ .title | markdownify }}</h1>
+    <p class="mt-4 text-lg">{{ .content | markdownify }}</p>
+  </div>
+</section>
+{{ end }}
+
+<!-- About Section -->
+{{ with .Params.about_section }}
+<section class="py-16 bg-light">
+  <div class="container mx-auto flex flex-col lg:flex-row items-center">
+    <div class="lg:w-1/2 px-6">
+      <h2 class="text-3xl font-bold">{{ .title | markdownify }}</h2>
+      <p class="mt-4 text-lg text-text-light">{{ .content | markdownify }}</p>
+      <ul class="mt-6 space-y-2">
+        {{ range .bulletpoints }}
+          <li class="flex items-center"><i class="fa fa-check text-primary mr-2"></i> {{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="lg:w-1/2 px-6 mt-8 lg:mt-0">
+      <img src="{{ .image | relURL }}" alt="About Us" class="rounded-lg shadow-md">
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Mission Section -->
+{{ with .Params.mission }}
+<section class="py-16 bg-white">
+  <div class="container mx-auto flex flex-col lg:flex-row-reverse items-center">
+    <div class="lg:w-1/2 px-6">
+      <h2 class="text-3xl font-bold">{{ .title | markdownify }}</h2>
+      <p class="mt-4 text-lg text-text-light">{{ .content | markdownify }}</p>
+    </div>
+    <div class="lg:w-1/2 px-6 mt-8 lg:mt-0">
+      <img src="{{ .image | relURL }}" alt="Our Mission" class="rounded-lg shadow-md">
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Values Section -->
+{{ with .Params.values }}
+<section class="py-16 bg-light text-center">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-8">{{ .title | markdownify }}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {{ range .items }}
+        <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-2">
+          <i class="fa {{ .icon }} text-5xl text-primary mb-4"></i>
+          <h3 class="text-lg font-bold">{{ .title }}</h3>
+          <p class="text-sm text-gray-700 mt-2">{{ .description }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Team Section -->
+{{ with .Params.team }}
+<section class="py-16 bg-white text-center">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-8">{{ .title | markdownify }}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {{ range .members }}
+        <div class="p-6 bg-light rounded-lg shadow-md">
+          <img src="{{ .image | relURL }}" alt="{{ .name }}" class="w-24 h-24 mx-auto rounded-full mb-4 shadow-md">
+          <h3 class="text-lg font-bold">{{ .name }}</h3>
+          <p class="text-sm text-gray-700">{{ .position }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Call to Action -->
+{{ with .Params.call_to_action }}
+<section class="py-16 bg-primary text-white text-center">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold">{{ .title | markdownify }}</h2>
+    <p class="mt-4 text-lg">{{ .content | markdownify }}</p>
+    <a href="{{ .button.link | relURL }}" class="mt-6 inline-block px-6 py-3 bg-white text-primary font-semibold rounded-lg shadow-md hover:bg-light transition">
+      {{ .button.label }}
+    </a>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}
+

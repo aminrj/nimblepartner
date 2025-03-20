@@ -29,10 +29,9 @@ features = [
 ]
 
 [author]
-name = "Zeon Studio"
-homepage = "https://zeon.studio"
+name = "Nimble Partner"
+homepage = "https://nimberpartner.com"
 
 [original]
-author = "Zeon Studio"
-homepage = "https://zeon.studio"
-repo = "https://github.com/zeon-studio/themeplate"
+author = "Nimble Partner"
+homepage = "https://nimberpartner.com"
