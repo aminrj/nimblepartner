@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Votre partenaire flexible pour l'excellence opérationnelle"
+  title: "Votre Partenaire Pour l'Excellence Opérationnelle"
   content: "Nimble Partner vous accompagne dans vos défis de consulting, de ressources humaines et de formation pour une transformation agile et durable de votre organisation."
   image: "/images/banner.png"
   button:
